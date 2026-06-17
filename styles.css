@@ -193,6 +193,23 @@ h1{
 .step h3{margin:.9rem 0 .4rem;font-size:1.15rem}
 .step p{font-size:.92rem;color:var(--ink-soft)}
 
+/* ---------------- gallery ---------------- */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.gal-item{position:relative;margin:0;border:3px solid var(--ink);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-hard);background:var(--ink);transition:transform .18s ease}
+.gal-item:nth-child(even){transform:rotate(1.2deg)}
+.gal-item:nth-child(3n){transform:rotate(-1.2deg)}
+.gal-item:hover{transform:scale(1.03) rotate(0);z-index:2}
+.gal-item img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
+.gal-item figcaption{
+  position:absolute;left:0;right:0;bottom:0;
+  font-family:'Baloo 2';font-weight:800;font-size:1.05rem;color:#fff;
+  padding:1.4rem .9rem .7rem;
+  background:linear-gradient(transparent,rgba(20,8,14,.82));
+  text-shadow:1px 1px 0 rgba(0,0,0,.5);
+}
+.gal-foot{text-align:center;margin-top:2rem;color:var(--ink-soft);font-weight:600}
+.gal-foot a{color:var(--sol-purple);font-weight:800;text-decoration:underline}
+
 /* ---------------- meme lab ---------------- */
 .lab{}
 .lab-tabs{display:flex;gap:.6rem;justify-content:center;margin-bottom:1.2rem;flex-wrap:wrap}
@@ -261,7 +278,7 @@ h1{
   .hero-art{order:1}
   .cta-row,.hero-stats,.ca-box{justify-content:center}
   .ca-box{margin:0 auto}
-  .timeline,.token-grid,.steps{grid-template-columns:1fr 1fr}
+  .timeline,.token-grid,.steps,.gal-grid{grid-template-columns:1fr 1fr}
   .token-card.big{grid-column:span 2}
   .who{grid-template-columns:1fr}
   .who-art{order:-1}
@@ -270,7 +287,7 @@ h1{
   .lab-panel{grid-template-columns:1fr}
 }
 @media(max-width:540px){
-  .timeline,.token-grid,.steps{grid-template-columns:1fr}
+  .timeline,.token-grid,.steps,.gal-grid{grid-template-columns:1fr}
   .token-card.big{grid-column:span 1}
   h1{font-size:3.2rem}
   .foot-top{grid-template-columns:1fr}
