@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OG Bingus ($BINGUS) — hi bingus 🐱 the OG sphynx on Solana</title>
+  <meta name="description" content="OG Bingus ($BINGUS) — the original wrinkly sphynx meme, now living on Solana. hi bingus. Buy the OG, make memes with AI, join the cult." />
+  <meta property="og:title" content="OG Bingus ($BINGUS) — hi bingus" />
+  <meta property="og:description" content="The OG wrinkly sphynx meme, reborn on Solana. Make AI memes, join the colony." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Luckiest+Guy&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%B1%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ============ SVG DEFS (reusable Bingus art) ============ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- Bingus mascot symbol: a wrinkly pink sphynx staring into your soul -->
+      <symbol id="bingus" viewBox="0 0 320 340">
+        <!-- shadow -->
+        <ellipse cx="160" cy="316" rx="92" ry="14" fill="rgba(60,20,40,.18)"/>
+        <!-- body -->
+        <path d="M82 250c-8-46 14-92 78-92s86 46 78 92c-5 30-30 56-78 56s-73-26-78-56z" fill="#f3b6c2"/>
+        <path d="M82 250c-8-46 14-92 78-92s86 46 78 92c-5 30-30 56-78 56s-73-26-78-56z" fill="url(#bodyShade)"/>
+        <!-- belly wrinkles -->
+        <path d="M118 268q42 18 84 0M124 292q36 14 72 0" fill="none" stroke="#dd8e9f" stroke-width="3.5" stroke-linecap="round" opacity=".7"/>
+        <!-- ears -->
+        <path d="M96 120c-14-44-8-74 4-78 14-5 44 16 56 44z" fill="#f3b6c2"/>
+        <path d="M224 120c14-44 8-74-4-78-14-5-44 16-56 44z" fill="#f3b6c2"/>
+        <path d="M104 116c-9-31-6-53 1-57 9-3 28 12 38 31z" fill="#e58aa0"/>
+        <path d="M216 116c9-31 6-53-1-57-9-3-28 12-38 31z" fill="#e58aa0"/>
+        <!-- head -->
+        <ellipse cx="160" cy="150" rx="86" ry="80" fill="#f5bcc8"/>
+        <ellipse cx="160" cy="150" rx="86" ry="80" fill="url(#headShade)"/>
+        <!-- forehead wrinkles (the iconic ones) -->
+        <path d="M120 96q40-20 80 0M112 112q48-22 96 0M122 128q38-14 76 0" fill="none" stroke="#dd8e9f" stroke-width="3.5" stroke-linecap="round" opacity=".75"/>
+        <!-- cheek wrinkles -->
+        <path d="M96 170q14 10 8 26M224 170q-14 10-8 26" fill="none" stroke="#dd8e9f" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+        <!-- eyes: big, glassy, slightly worried -->
+        <g>
+          <ellipse cx="126" cy="158" rx="23" ry="26" fill="#fff"/>
+          <ellipse cx="194" cy="158" rx="23" ry="26" fill="#fff"/>
+          <ellipse cx="129" cy="160" rx="15" ry="18" fill="#3aa6e0"/>
+          <ellipse cx="191" cy="160" rx="15" ry="18" fill="#3aa6e0"/>
+          <circle cx="129" cy="162" r="8.5" fill="#16344a"/>
+          <circle cx="191" cy="162" r="8.5" fill="#16344a"/>
+          <circle cx="133" cy="157" r="3.4" fill="#fff"/>
+          <circle cx="195" cy="157" r="3.4" fill="#fff"/>
+          <!-- worried lids -->
+          <path d="M104 146q22-16 44-2" fill="none" stroke="#cf7e91" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M172 144q22-14 44 2" fill="none" stroke="#cf7e91" stroke-width="3.5" stroke-linecap="round"/>
+        </g>
+        <!-- nose -->
+        <path d="M152 188h16l-8 11z" fill="#d96d83"/>
+        <!-- mouth: the concerned little :3 -->
+        <path d="M160 199v8M160 207q-9 9-18 4M160 207q9 9 18 4" fill="none" stroke="#c96a7e" stroke-width="3" stroke-linecap="round"/>
+        <!-- whisker dots -->
+        <g fill="#c96a7e">
+          <circle cx="128" cy="196" r="1.7"/><circle cx="120" cy="201" r="1.7"/><circle cx="126" cy="206" r="1.7"/>
+          <circle cx="192" cy="196" r="1.7"/><circle cx="200" cy="201" r="1.7"/><circle cx="194" cy="206" r="1.7"/>
+        </g>
+      </symbol>
+
+      <!-- tiny paw -->
+      <symbol id="paw" viewBox="0 0 64 64">
+        <ellipse cx="32" cy="42" rx="18" ry="15" fill="currentColor"/>
+        <ellipse cx="14" cy="24" rx="6.5" ry="9" fill="currentColor"/>
+        <ellipse cx="28" cy="17" rx="6.5" ry="9.5" fill="currentColor"/>
+        <ellipse cx="44" cy="19" rx="6.5" ry="9.5" fill="currentColor"/>
+        <ellipse cx="55" cy="30" rx="6" ry="8" fill="currentColor"/>
+      </symbol>
+
+      <linearGradient id="headShade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#ffd2dc" stop-opacity=".8"/>
+        <stop offset="1" stop-color="#e88ea1" stop-opacity=".25"/>
+      </linearGradient>
+      <linearGradient id="bodyShade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#ffd2dc" stop-opacity=".5"/>
+        <stop offset="1" stop-color="#d97e92" stop-opacity=".3"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <a href="#top" class="brand">
+      <svg class="brand-cat" viewBox="0 0 320 340" aria-hidden="true"><use href="#bingus"/></svg>
+      <span>OG&nbsp;BINGUS</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#lore">The Lore</a>
+      <a href="#who">Who is Bingus</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#buy">How to Buy</a>
+      <a href="#generator">Meme Lab</a>
+    </nav>
+    <a href="#buy" class="btn btn-pill nav-cta">Buy $BINGUS</a>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="kicker"><span class="dot"></span> The OG. Accept no imitations.</span>
+        <h1>hi bingus.</h1>
+        <p class="lede">
+          The original wrinkly sphynx that broke the internet in 2020 has crawled onto
+          <strong>Solana</strong>. No roadmap, no utility, just an ancient cat staring directly
+          into your soul. <span class="nowrap">$BINGUS</span> is the OG.
+        </p>
+
+        <div class="cta-row">
+          <a href="#buy" class="btn btn-primary">
+            <svg viewBox="0 0 64 64" class="ico"><use href="#paw"/></svg>
+            Grab the OG
+          </a>
+          <a href="#generator" class="btn btn-ghost">Make a meme →</a>
+        </div>
+
+        <div class="ca-box">
+          <span class="ca-label">CONTRACT (CA)</span>
+          <code id="ca">So1ana...CoMiNgSooN...bingus</code>
+          <button class="ca-copy" id="caCopy" aria-label="Copy contract address">Copy</button>
+        </div>
+
+        <div class="hero-stats">
+          <div><b>2020</b><span>year of the wrinkle</span></div>
+          <div><b>1B</b><span>$BINGUS supply</span></div>
+          <div><b>0%</b><span>tax. forever.</span></div>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="speech">hi bingus</div>
+        <svg class="hero-cat" viewBox="0 0 320 340" aria-label="Bingus the sphynx cat"><use href="#bingus"/></svg>
+        <svg class="float-paw p1" viewBox="0 0 64 64"><use href="#paw"/></svg>
+        <svg class="float-paw p2" viewBox="0 0 64 64"><use href="#paw"/></svg>
+        <span class="sparkle s1"></span><span class="sparkle s2"></span><span class="sparkle s3"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>hi bingus</span><i></i><span>$BINGUS</span><i></i><span>the og sphynx</span><i></i>
+      <span>my beloved</span><i></i><span>wrinkle gang</span><i></i><span>hi bingus</span><i></i>
+      <span>$BINGUS</span><i></i><span>the og sphynx</span><i></i><span>my beloved</span><i></i>
+      <span>wrinkle gang</span><i></i><span>hi bingus</span><i></i><span>$BINGUS</span><i></i>
+      <span>the og sphynx</span><i></i><span>my beloved</span><i></i><span>wrinkle gang</span><i></i>
+    </div>
+  </div>
+
+  <!-- ============ LORE ============ -->
+  <section class="section" id="lore">
+    <div class="sec-head">
+      <h2>The Lore <span class="scribble"></span></h2>
+      <p>Every legend has an origin story. Bingus has a <em>documented</em> one.</p>
+    </div>
+
+    <div class="timeline">
+      <article class="tl-card">
+        <span class="tl-tag">MAR 2020</span>
+        <h3>Patient Zero</h3>
+        <p>A hairless sphynx from China surfaces on Douyin. On March 22, Instagram user
+        <b>subarusocks</b> reposts the clip of someone scrunching his wrinkly skin while he stares
+        dead into the lens. ~1,600 views in seven months. The world wasn't ready.</p>
+      </article>
+
+      <article class="tl-card">
+        <span class="tl-tag">SEP 8 2020</span>
+        <h3>"AHHHHH. hi bingus…"</h3>
+        <p>Redditor <b>haydongers</b> drops the cat on r/ambien with the now-immortal caption.
+        2,800+ upvotes in a month. The greeting <b>"hi bingus"</b> is born and never dies.</p>
+      </article>
+
+      <article class="tl-card">
+        <span class="tl-tag">SEP 30 2020</span>
+        <h3>Escape Velocity</h3>
+        <p>A repost to r/aww nukes <b>17,500+</b> upvotes. Tenor GIFs multiply. Bingus joins
+        Big Floppa as a horseman of the <i>meowpocalypse</i>.</p>
+      </article>
+
+      <article class="tl-card">
+        <span class="tl-tag">OCT 2020</span>
+        <h3>"bingus my beloved"</h3>
+        <p>The heart-locket edit spawns the entire <b>"My Beloved"</b> format. Bingus stops being
+        a cat and becomes a unit of affection. A Binguscord forms. He is everywhere.</p>
+      </article>
+    </div>
+
+    <p class="lore-foot">
+      Source of truth: the meme historians at <a href="https://knowyourmeme.com/memes/bingus" target="_blank" rel="noopener">Know Your Meme</a>.
+      We just put him on a blockchain where he belongs.
+    </p>
+  </section>
+
+  <!-- ============ WHO IS BINGUS ============ -->
+  <section class="section who" id="who">
+    <div class="who-art">
+      <svg class="who-cat" viewBox="0 0 320 340" aria-hidden="true"><use href="#bingus"/></svg>
+    </div>
+    <div class="who-copy">
+      <div class="sec-head left">
+        <h2>Who <em>is</em> Bingus?</h2>
+        <p>A scientific breakdown of the OG specimen.</p>
+      </div>
+      <ul class="spec-list">
+        <li>
+          <svg viewBox="0 0 64 64" class="spec-ico"><use href="#paw"/></svg>
+          <div><b>Breed</b><span>100% certified hairless Sphynx. Maximum wrinkle density.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 64 64" class="spec-ico"><use href="#paw"/></svg>
+          <div><b>Eyes</b><span>Two glassy blue orbs that have seen the top and the bottom of every chart.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 64 64" class="spec-ico"><use href="#paw"/></svg>
+          <div><b>Vibe</b><span>Perpetually mildly concerned. Holds anyway. Diamond paws.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 64 64" class="spec-ico"><use href="#paw"/></svg>
+          <div><b>Status</b><span>The generic name for every sphynx alive. An idea. A movement. A coin.</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ TOKENOMICS ============ -->
+  <section class="section" id="tokenomics">
+    <div class="sec-head">
+      <h2>Tokenomics <span class="scribble"></span></h2>
+      <p>Wrinkle-brain economics. It's a meme, ser, do your own research.</p>
+    </div>
+
+    <div class="token-grid">
+      <div class="token-card big">
+        <span class="t-label">Total Supply</span>
+        <span class="t-value">1,000,000,000</span>
+        <span class="t-sub">one billion wrinkly little guys</span>
+      </div>
+      <div class="token-card"><span class="t-label">Buy / Sell Tax</span><span class="t-value">0 / 0</span></div>
+      <div class="token-card"><span class="t-label">LP Status</span><span class="t-value">Burned 🔥</span></div>
+      <div class="token-card"><span class="t-label">Chain</span><span class="t-value">Solana</span></div>
+      <div class="token-card"><span class="t-label">Mint Authority</span><span class="t-value">Revoked</span></div>
+      <div class="token-card"><span class="t-label">Utility</span><span class="t-value">staring at you</span></div>
+    </div>
+  </section>
+
+  <!-- ============ HOW TO BUY ============ -->
+  <section class="section buy" id="buy">
+    <div class="sec-head">
+      <h2>How to adopt the OG</h2>
+      <p>Four steps from broke to wrinkle-pilled.</p>
+    </div>
+
+    <ol class="steps">
+      <li class="step">
+        <span class="step-n">1</span>
+        <h3>Get a wallet</h3>
+        <p>Download <b>Phantom</b> or <b>Solflare</b>. Keep your seed phrase off the internet — Bingus would.</p>
+      </li>
+      <li class="step">
+        <span class="step-n">2</span>
+        <h3>Fund with SOL</h3>
+        <p>Buy SOL on any exchange and send it to your shiny new wallet.</p>
+      </li>
+      <li class="step">
+        <span class="step-n">3</span>
+        <h3>Swap for $BINGUS</h3>
+        <p>Head to Jupiter or Raydium, paste the contract address, and swap SOL for the OG.</p>
+      </li>
+      <li class="step">
+        <span class="step-n">4</span>
+        <h3>Say "hi bingus"</h3>
+        <p>Welcome to the colony. Hold, meme, repeat. You are wrinkle now.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ MEME GENERATOR ============ -->
+  <section class="section lab" id="generator">
+    <div class="sec-head">
+      <h2>The Meme Lab <span class="scribble"></span></h2>
+      <p>Powered by Google Gemini. Forge fresh Bingus propaganda in seconds.</p>
+    </div>
+
+    <div class="lab-tabs" role="tablist">
+      <button class="tab is-active" data-tab="ai" role="tab">✨ AI Image Maker</button>
+      <button class="tab" data-tab="caption" role="tab">💬 Classic Caption Maker</button>
+    </div>
+
+    <!-- API key bar -->
+    <div class="key-bar">
+      <svg viewBox="0 0 24 24" class="key-ico"><path d="M12 2a5 5 0 0 0-5 5c0 .7.15 1.36.41 1.96L2 14.37V18a1 1 0 0 0 1 1h3.63l5.41-5.41A5 5 0 1 0 12 2zm2.5 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" fill="currentColor"/></svg>
+      <input type="password" id="apiKey" placeholder="Paste your Gemini API key (stored only in your browser)" autocomplete="off" spellcheck="false" />
+      <button class="btn btn-mini" id="saveKey">Save</button>
+      <a class="key-help" href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">Get a free key ↗</a>
+    </div>
+
+    <!-- AI panel -->
+    <div class="lab-panel" id="panel-ai">
+      <div class="lab-controls">
+        <label>Describe your Bingus meme</label>
+        <textarea id="aiPrompt" rows="3" placeholder="e.g. Bingus as a Roman emperor holding a giant SOL coin, dramatic lighting, oil painting meme"></textarea>
+        <div class="chips" id="aiChips">
+          <button class="chip" data-fill="Bingus the wrinkly sphynx cat wearing tiny sunglasses, sitting on a pile of gold Solana coins, meme style">💰 rich bingus</button>
+          <button class="chip" data-fill="Epic renaissance oil painting of Bingus the hairless sphynx as a king on a throne, dramatic">👑 emperor bingus</button>
+          <button class="chip" data-fill="Bingus the sphynx cat as an astronaut floating in space holding a flag that says BINGUS, to the moon">🚀 moon bingus</button>
+          <button class="chip" data-fill="Bingus the wrinkly cat crying happy tears looking at a green candle chart, wholesome meme">📈 pump bingus</button>
+        </div>
+        <button class="btn btn-primary lab-go" id="aiGo">
+          <span class="go-label">Generate meme</span>
+          <span class="spinner" hidden></span>
+        </button>
+        <p class="lab-note">Uses <code>gemini-2.5-flash-image</code> (a.k.a. nano banana). Your key never leaves your browser.</p>
+      </div>
+      <div class="lab-stage" id="aiStage">
+        <div class="stage-empty">
+          <svg viewBox="0 0 320 340" class="stage-cat"><use href="#bingus"/></svg>
+          <p>Your fresh Bingus will appear here.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Caption panel -->
+    <div class="lab-panel" id="panel-caption" hidden>
+      <div class="lab-controls">
+        <label>Top text</label>
+        <input type="text" id="capTop" maxlength="60" placeholder="WHEN IT FINALLY PUMPS" />
+        <label>Bottom text</label>
+        <input type="text" id="capBottom" maxlength="60" placeholder="hi bingus" />
+        <button class="btn btn-ghost btn-mini" id="capAi">✨ Let Gemini write it for me</button>
+        <p class="lab-note">Renders text over the OG Bingus on a canvas — works even without an API key.</p>
+      </div>
+      <div class="lab-stage">
+        <canvas id="capCanvas" width="640" height="640"></canvas>
+        <button class="btn btn-primary lab-go" id="capDownload">⬇ Download meme</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JOIN ============ -->
+  <section class="section join">
+    <div class="join-card">
+      <svg class="join-cat" viewBox="0 0 320 340" aria-hidden="true"><use href="#bingus"/></svg>
+      <div>
+        <h2>Join the colony</h2>
+        <p>No promises. No financial advice. Just the realest sphynx in crypto and a very loud group chat.</p>
+        <div class="socials">
+          <a class="soc" href="#" aria-label="X / Twitter">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2H21.5l-7.5 8.57L23 22h-6.8l-5.32-6.96L4.8 22H1.54l8.02-9.17L1 2h6.97l4.81 6.36zM17.1 20.1h1.8L7.04 3.8H5.1z" fill="currentColor"/></svg>
+            <span>Twitter / X</span>
+          </a>
+          <a class="soc" href="#" aria-label="Telegram">
+            <svg viewBox="0 0 24 24"><path d="M21.94 4.3 18.6 19.9c-.25 1.1-.9 1.37-1.83.85l-5.06-3.73-2.44 2.35c-.27.27-.5.5-1 .5l.36-5.13 9.34-8.44c.4-.36-.09-.56-.63-.2L5.5 13.07.55 11.5c-1.08-.34-1.1-1.08.23-1.6L20.54 2.7c.9-.34 1.68.2 1.4 1.6z" fill="currentColor"/></svg>
+            <span>Telegram</span>
+          </a>
+          <a class="soc" href="https://knowyourmeme.com/memes/bingus" target="_blank" rel="noopener" aria-label="Know Your Meme">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-2h2zm0-4h-2V7h2z" fill="currentColor"/></svg>
+            <span>The Lore</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="foot-top">
+      <a href="#top" class="brand">
+        <svg class="brand-cat" viewBox="0 0 320 340" aria-hidden="true"><use href="#bingus"/></svg>
+        <span>OG BINGUS</span>
+      </a>
+      <p class="disclaimer">
+        $BINGUS is a meme coin with no intrinsic value or expectation of financial return. There is
+        no formal team or roadmap. The coin is for entertainment and community purposes only. This
+        is not financial advice. Bingus the cat belongs to his original owner — we just love him.
+      </p>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 OG Bingus. hi bingus.</span>
+      <span>Built for the wrinkle gang 🐾</span>
+    </div>
+  </footer>
+
+  <!-- toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
