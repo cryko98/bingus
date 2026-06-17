@@ -69,7 +69,7 @@ h1,h2,h3,.brand span,.speech,.t-value,.step-n,.tl-tag{
 }
 .brand{display:flex;align-items:center;gap:.55rem;font-weight:800}
 .brand span{font-size:1.25rem;font-weight:800}
-.brand-cat{width:38px;height:40px;filter:drop-shadow(2px 2px 0 rgba(0,0,0,.12))}
+.brand-cat{width:40px;height:40px;object-fit:contain;filter:drop-shadow(2px 2px 0 rgba(0,0,0,.12))}
 .nav-links{display:flex;gap:1.3rem;margin-left:auto;font-weight:600;font-size:.96rem}
 .nav-links a{color:var(--ink-soft);transition:color .15s}
 .nav-links a:hover{color:var(--pink-ink)}
@@ -234,16 +234,10 @@ h1{
 .gal-foot a{color:var(--sol-purple);font-weight:800;text-decoration:underline}
 
 /* ---------------- meme lab ---------------- */
-.lab{}
-.lab-tabs{display:flex;gap:.6rem;justify-content:center;margin-bottom:1.2rem;flex-wrap:wrap}
-.tab{font-family:'Baloo 2';font-weight:700;font-size:1rem;padding:.7rem 1.3rem;border-radius:999px;border:2.5px solid var(--ink);background:#fff;cursor:pointer;box-shadow:3px 3px 0 var(--ink);transition:transform .12s}
-.tab.is-active{background:var(--ink);color:#fff}
-.tab:hover{transform:translateY(-2px)}
-
-.key-bar{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;background:#fff;border:2px solid var(--line);border-radius:14px;padding:.6rem .8rem;max-width:760px;margin:0 auto 1.4rem}
-.key-ico{width:22px;height:22px;color:var(--pink-ink);flex-shrink:0}
-#apiKey{flex:1;min-width:200px;border:none;outline:none;font-size:.92rem;background:transparent;color:var(--ink)}
-.key-help{font-size:.82rem;font-weight:700;color:var(--sol-purple);white-space:nowrap}
+.ref-img{display:flex;gap:.8rem;align-items:center;background:var(--cream);border:2px solid var(--line);border-radius:14px;padding:.6rem .7rem;margin-bottom:.4rem}
+.ref-img img{width:58px;height:58px;object-fit:contain;flex-shrink:0;background:#fff;border:2px solid var(--ink);border-radius:12px}
+.ref-img b{display:block;font-family:'Baloo 2';font-size:.95rem}
+.ref-img span{font-size:.82rem;color:var(--ink-soft)}
 
 .lab-panel{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:start;max-width:980px;margin:0 auto}
 .lab-controls label{display:block;font-family:'Baloo 2';font-weight:700;margin:.8rem 0 .35rem}
@@ -260,9 +254,8 @@ h1{
 
 .lab-stage{background:#fff;border:2.5px solid var(--ink);border-radius:var(--r);box-shadow:var(--shadow-hard);min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem;gap:1rem;overflow:hidden}
 .lab-stage img{max-width:100%;border-radius:12px;border:2px solid var(--line)}
-.lab-stage canvas{max-width:100%;height:auto;border-radius:12px;border:2px solid var(--line);background:var(--cream)}
 .stage-empty{text-align:center;color:var(--ink-soft)}
-.stage-cat{width:160px;opacity:.55}
+.stage-cat{width:150px;height:auto;opacity:.6;border:none!important;border-radius:0!important}
 .stage-empty p{margin-top:.4rem;font-weight:600}
 .stage-error{color:var(--pink-ink);font-weight:600;text-align:center;padding:1rem}
 

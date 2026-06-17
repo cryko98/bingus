@@ -13,59 +13,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Luckiest+Guy&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%B1%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" type="image/png" href="binguslogo.png" />
+  <link rel="apple-touch-icon" href="binguslogo.png" />
 </head>
 <body>
 
-  <!-- ============ SVG DEFS (reusable Bingus art) ============ -->
+  <!-- ============ SVG DEFS (reusable icons) ============ -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
-      <!-- Bingus mascot symbol: a wrinkly pink sphynx staring into your soul -->
-      <symbol id="bingus" viewBox="0 0 320 340">
-        <!-- shadow -->
-        <ellipse cx="160" cy="316" rx="92" ry="14" fill="rgba(60,20,40,.18)"/>
-        <!-- body -->
-        <path d="M82 250c-8-46 14-92 78-92s86 46 78 92c-5 30-30 56-78 56s-73-26-78-56z" fill="#f3b6c2"/>
-        <path d="M82 250c-8-46 14-92 78-92s86 46 78 92c-5 30-30 56-78 56s-73-26-78-56z" fill="url(#bodyShade)"/>
-        <!-- belly wrinkles -->
-        <path d="M118 268q42 18 84 0M124 292q36 14 72 0" fill="none" stroke="#dd8e9f" stroke-width="3.5" stroke-linecap="round" opacity=".7"/>
-        <!-- ears -->
-        <path d="M96 120c-14-44-8-74 4-78 14-5 44 16 56 44z" fill="#f3b6c2"/>
-        <path d="M224 120c14-44 8-74-4-78-14-5-44 16-56 44z" fill="#f3b6c2"/>
-        <path d="M104 116c-9-31-6-53 1-57 9-3 28 12 38 31z" fill="#e58aa0"/>
-        <path d="M216 116c9-31 6-53-1-57-9-3-28 12-38 31z" fill="#e58aa0"/>
-        <!-- head -->
-        <ellipse cx="160" cy="150" rx="86" ry="80" fill="#f5bcc8"/>
-        <ellipse cx="160" cy="150" rx="86" ry="80" fill="url(#headShade)"/>
-        <!-- forehead wrinkles (the iconic ones) -->
-        <path d="M120 96q40-20 80 0M112 112q48-22 96 0M122 128q38-14 76 0" fill="none" stroke="#dd8e9f" stroke-width="3.5" stroke-linecap="round" opacity=".75"/>
-        <!-- cheek wrinkles -->
-        <path d="M96 170q14 10 8 26M224 170q-14 10-8 26" fill="none" stroke="#dd8e9f" stroke-width="3" stroke-linecap="round" opacity=".6"/>
-        <!-- eyes: big, glassy, slightly worried -->
-        <g>
-          <ellipse cx="126" cy="158" rx="23" ry="26" fill="#fff"/>
-          <ellipse cx="194" cy="158" rx="23" ry="26" fill="#fff"/>
-          <ellipse cx="129" cy="160" rx="15" ry="18" fill="#3aa6e0"/>
-          <ellipse cx="191" cy="160" rx="15" ry="18" fill="#3aa6e0"/>
-          <circle cx="129" cy="162" r="8.5" fill="#16344a"/>
-          <circle cx="191" cy="162" r="8.5" fill="#16344a"/>
-          <circle cx="133" cy="157" r="3.4" fill="#fff"/>
-          <circle cx="195" cy="157" r="3.4" fill="#fff"/>
-          <!-- worried lids -->
-          <path d="M104 146q22-16 44-2" fill="none" stroke="#cf7e91" stroke-width="3.5" stroke-linecap="round"/>
-          <path d="M172 144q22-14 44 2" fill="none" stroke="#cf7e91" stroke-width="3.5" stroke-linecap="round"/>
-        </g>
-        <!-- nose -->
-        <path d="M152 188h16l-8 11z" fill="#d96d83"/>
-        <!-- mouth: the concerned little :3 -->
-        <path d="M160 199v8M160 207q-9 9-18 4M160 207q9 9 18 4" fill="none" stroke="#c96a7e" stroke-width="3" stroke-linecap="round"/>
-        <!-- whisker dots -->
-        <g fill="#c96a7e">
-          <circle cx="128" cy="196" r="1.7"/><circle cx="120" cy="201" r="1.7"/><circle cx="126" cy="206" r="1.7"/>
-          <circle cx="192" cy="196" r="1.7"/><circle cx="200" cy="201" r="1.7"/><circle cx="194" cy="206" r="1.7"/>
-        </g>
-      </symbol>
-
       <!-- tiny paw -->
       <symbol id="paw" viewBox="0 0 64 64">
         <ellipse cx="32" cy="42" rx="18" ry="15" fill="currentColor"/>
@@ -74,22 +29,13 @@
         <ellipse cx="44" cy="19" rx="6.5" ry="9.5" fill="currentColor"/>
         <ellipse cx="55" cy="30" rx="6" ry="8" fill="currentColor"/>
       </symbol>
-
-      <linearGradient id="headShade" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#ffd2dc" stop-opacity=".8"/>
-        <stop offset="1" stop-color="#e88ea1" stop-opacity=".25"/>
-      </linearGradient>
-      <linearGradient id="bodyShade" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#ffd2dc" stop-opacity=".5"/>
-        <stop offset="1" stop-color="#d97e92" stop-opacity=".3"/>
-      </linearGradient>
     </defs>
   </svg>
 
   <!-- ============ NAV ============ -->
   <header class="nav" id="top">
     <a href="#top" class="brand">
-      <svg class="brand-cat" viewBox="0 0 320 340" aria-hidden="true"><use href="#bingus"/></svg>
+      <img class="brand-cat" src="binguslogo.png" alt="" />
       <span>OG&nbsp;BINGUS</span>
     </a>
     <nav class="nav-links">
@@ -141,7 +87,7 @@
 
       <div class="hero-art">
         <div class="speech">hi bingus</div>
-        <svg class="hero-cat" viewBox="0 0 320 340" aria-label="Bingus the sphynx cat"><use href="#bingus"/></svg>
+        <img class="hero-cat" src="binguslogo.png" alt="OG Bingus the sphynx cat" />
         <svg class="float-paw p1" viewBox="0 0 64 64"><use href="#paw"/></svg>
         <svg class="float-paw p2" viewBox="0 0 64 64"><use href="#paw"/></svg>
         <span class="sparkle s1"></span><span class="sparkle s2"></span><span class="sparkle s3"></span>
@@ -226,7 +172,7 @@
   <!-- ============ WHO IS BINGUS ============ -->
   <section class="section who" id="who">
     <div class="who-art">
-      <svg class="who-cat" viewBox="0 0 320 340" aria-hidden="true"><use href="#bingus"/></svg>
+      <img class="who-cat" src="binguslogo.png" alt="" />
     </div>
     <div class="who-copy">
       <div class="sec-head left">
@@ -349,57 +295,34 @@
       <p>Powered by Google Gemini. Forge fresh Bingus propaganda in seconds.</p>
     </div>
 
-    <div class="lab-tabs" role="tablist">
-      <button class="tab is-active" data-tab="ai" role="tab">✨ AI Image Maker</button>
-      <button class="tab" data-tab="caption" role="tab">💬 Classic Caption Maker</button>
-    </div>
-
-    <!-- API key bar -->
-    <div class="key-bar">
-      <svg viewBox="0 0 24 24" class="key-ico"><path d="M12 2a5 5 0 0 0-5 5c0 .7.15 1.36.41 1.96L2 14.37V18a1 1 0 0 0 1 1h3.63l5.41-5.41A5 5 0 1 0 12 2zm2.5 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" fill="currentColor"/></svg>
-      <input type="password" id="apiKey" placeholder="Paste your Gemini API key (stored only in your browser)" autocomplete="off" spellcheck="false" />
-      <button class="btn btn-mini" id="saveKey">Save</button>
-      <a class="key-help" href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">Get a free key ↗</a>
-    </div>
-
-    <!-- AI panel -->
     <div class="lab-panel" id="panel-ai">
       <div class="lab-controls">
-        <label>Describe your Bingus meme</label>
+        <div class="ref-img">
+          <img src="binguslogo.png" alt="Bingus reference image" />
+          <div>
+            <b>Reference: the OG Bingus</b>
+            <span>Every meme is generated from this exact cat, so it always looks like him.</span>
+          </div>
+        </div>
+        <label for="aiPrompt">Describe your Bingus meme</label>
         <textarea id="aiPrompt" rows="3" placeholder="e.g. Bingus as a Roman emperor holding a giant SOL coin, dramatic lighting, oil painting meme"></textarea>
         <div class="chips" id="aiChips">
-          <button class="chip" data-fill="Bingus the wrinkly sphynx cat wearing tiny sunglasses, sitting on a pile of gold Solana coins, meme style">💰 rich bingus</button>
-          <button class="chip" data-fill="Epic renaissance oil painting of Bingus the hairless sphynx as a king on a throne, dramatic">👑 emperor bingus</button>
-          <button class="chip" data-fill="Bingus the sphynx cat as an astronaut floating in space holding a flag that says BINGUS, to the moon">🚀 moon bingus</button>
-          <button class="chip" data-fill="Bingus the wrinkly cat crying happy tears looking at a green candle chart, wholesome meme">📈 pump bingus</button>
+          <button class="chip" data-fill="Bingus wearing tiny sunglasses, sitting on a huge pile of gold Solana coins, meme style">💰 rich bingus</button>
+          <button class="chip" data-fill="Epic renaissance oil painting of Bingus as a king on a golden throne, dramatic lighting">👑 emperor bingus</button>
+          <button class="chip" data-fill="Bingus as an astronaut floating in space holding a flag that says BINGUS, to the moon">🚀 moon bingus</button>
+          <button class="chip" data-fill="Bingus crying happy tears while looking at a giant green candle chart, wholesome meme">📈 pump bingus</button>
         </div>
         <button class="btn btn-primary lab-go" id="aiGo">
           <span class="go-label">Generate meme</span>
           <span class="spinner" hidden></span>
         </button>
-        <p class="lab-note">Uses <code>gemini-2.5-flash-image</code> (a.k.a. nano banana). Your key never leaves your browser.</p>
+        <p class="lab-note">Powered by Google <code>gemini-2.5-flash-image</code> (nano banana), running securely on the server.</p>
       </div>
       <div class="lab-stage" id="aiStage">
         <div class="stage-empty">
-          <svg viewBox="0 0 320 340" class="stage-cat"><use href="#bingus"/></svg>
+          <img class="stage-cat" src="binguslogo.png" alt="" />
           <p>Your fresh Bingus will appear here.</p>
         </div>
-      </div>
-    </div>
-
-    <!-- Caption panel -->
-    <div class="lab-panel" id="panel-caption" hidden>
-      <div class="lab-controls">
-        <label>Top text</label>
-        <input type="text" id="capTop" maxlength="60" placeholder="WHEN IT FINALLY PUMPS" />
-        <label>Bottom text</label>
-        <input type="text" id="capBottom" maxlength="60" placeholder="hi bingus" />
-        <button class="btn btn-ghost btn-mini" id="capAi">✨ Let Gemini write it for me</button>
-        <p class="lab-note">Renders text over the OG Bingus on a canvas — works even without an API key.</p>
-      </div>
-      <div class="lab-stage">
-        <canvas id="capCanvas" width="640" height="640"></canvas>
-        <button class="btn btn-primary lab-go" id="capDownload">⬇ Download meme</button>
       </div>
     </div>
   </section>
@@ -407,7 +330,7 @@
   <!-- ============ JOIN ============ -->
   <section class="section join">
     <div class="join-card">
-      <svg class="join-cat" viewBox="0 0 320 340" aria-hidden="true"><use href="#bingus"/></svg>
+      <img class="join-cat" src="binguslogo.png" alt="" />
       <div>
         <h2>Join the colony</h2>
         <p>No promises. No financial advice. Just the realest sphynx in crypto and a very loud group chat.</p>
@@ -433,7 +356,7 @@
   <footer class="footer">
     <div class="foot-top">
       <a href="#top" class="brand">
-        <svg class="brand-cat" viewBox="0 0 320 340" aria-hidden="true"><use href="#bingus"/></svg>
+        <img class="brand-cat" src="binguslogo.png" alt="" />
         <span>OG BINGUS</span>
       </a>
       <p class="disclaimer">

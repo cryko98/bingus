@@ -9,37 +9,53 @@ the documented meme lore, tokenomics, a how-to-buy guide, and a **Gemini-powered
 ## Features
 
 - **Custom SVG Bingus** mascot drawn from scratch — used across the hero, sections and the meme maker.
-- **Meme Lab** with two modes:
-  - **AI Image Maker** — generates fresh Bingus memes with Google `gemini-2.5-flash-image` (nano banana).
-  - **Classic Caption Maker** — renders top/bottom text over the SVG Bingus on a `<canvas>`, with an
-    optional "let Gemini write it" button (`gemini-2.5-flash`). Works even without an API key.
-- No build step. Plain HTML / CSS / JS — drop it on any static host (GitHub Pages, Netlify, Vercel…).
+- **Meme Lab** — an **AI Image Maker** that generates fresh Bingus memes with Google
+  `gemini-2.5-flash-image` (nano banana), using `binguslogo.png` as a reference image so every
+  result actually looks like the OG cat.
+- The Gemini call runs in a **serverless function** (`api/generate.js`), so the API key stays on the
+  server and never reaches the browser.
 
-## Gemini API key
+## Deploy to Vercel
 
-The Meme Lab calls the Gemini API **directly from the browser**. Paste a key into the field in the
-Meme Lab section — it is stored only in your browser's `localStorage` and never sent anywhere except
-to Google's API. Get a free key at <https://aistudio.google.com/app/apikey>.
+This is the intended host. The static files are served from the project root and `api/generate.js`
+becomes a serverless function automatically.
 
-> ⚠️ Because this is a static site, the key lives client-side. For a production deployment with a
-> shared key, proxy the Gemini calls through a small serverless function instead of shipping the key.
+1. Import the repo into [Vercel](https://vercel.com/new) (Framework Preset: **Other**, no build).
+2. Add an environment variable:
+
+   | Name | Value |
+   |------|-------|
+   | `GEMINI_API_KEY` | your Google AI Studio key (<https://aistudio.google.com/app/apikey>) |
+
+3. Deploy. The Meme Lab calls `POST /api/generate` which uses the key server-side.
+
+> The browser never sees the key — it only sends the prompt and the reference image to `/api/generate`.
 
 ## Run locally
 
-Just open `index.html`, or serve the folder:
+The static page works with any file server, but the **Meme Lab needs the serverless function**, so
+use the Vercel CLI for full functionality:
+
+```bash
+npm i -g vercel
+vercel dev            # serves the site + /api/generate, reads GEMINI_API_KEY from a local .env
+```
+
+Static-only preview (Meme Lab will report that `/api/generate` is unavailable):
 
 ```bash
 python -m http.server 8000
-# then visit http://localhost:8000
 ```
 
 ## Files
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Markup + inline reusable SVG defs |
-| `styles.css` | All styling (bingus-pink × Solana palette) |
-| `script.js`  | Interactions, Gemini calls, canvas meme maker |
+| `index.html`     | Markup + inline reusable SVG icon defs |
+| `styles.css`     | All styling (bingus-pink × Solana palette) |
+| `script.js`      | Interactions + Meme Lab (calls `/api/generate`) |
+| `api/generate.js`| Serverless Gemini proxy (reads `GEMINI_API_KEY`) |
+| `binguslogo.png` | The OG Bingus — logo, favicon, mascot & meme reference |
 
 ## Disclaimer
 

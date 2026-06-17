@@ -8,3 +8,6 @@ desktop.ini
 # local env / secrets — never commit your Gemini key
 .env
 *.local
+
+# vercel
+.vercel
